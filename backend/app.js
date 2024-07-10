@@ -8,7 +8,7 @@ const actressesRoutes = require('./routes/actressesRoutes');
 const userRoutes = require('./routes/userRoutes');
 const validator = require('validator');
 const errorHandler = require('./middleware/errorHandler');
-
+app.use('/uploads' , express.static('uploads'))
 // object data modelling library
 //mongoose
 
