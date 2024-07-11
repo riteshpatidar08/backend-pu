@@ -4,11 +4,15 @@ const mongoose = require('mongoose');
 const chalk = require('chalk');
 const morgan = require('morgan');
 const studentRoutes = require('./routes/studentRoutes');
-const actressesRoutes = require('./routes/actressesRoutes');
-const userRoutes = require('./routes/userRoutes');
+
 const validator = require('validator');
 const errorHandler = require('./middleware/errorHandler');
-app.use('/uploads' , express.static('uploads'))
+
+const actressesRoutes = require('./routes/actressesRoutes');
+const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
+
+app.use('/uploads', express.static('uploads'));
 // object data modelling library
 //mongoose
 
@@ -43,6 +47,7 @@ mongoose
 app.use('/api', studentRoutes);
 app.use('/api', actressesRoutes);
 app.use('/api', userRoutes);
+app.use('/api', productRoutes);
 
 // Student.find()
 // Student.findByIdAndDelete()
